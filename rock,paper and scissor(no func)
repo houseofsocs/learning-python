@@ -1,0 +1,61 @@
+import sys
+from random import randint
+choice1=input("would you like to play a game of rock,paper and scissors yes or no: ")
+human=0
+computers=0
+draws=0
+while choice1=="yes":
+    choice2=input("please choose rock,paper or scissor: ")
+    computer=randint(1,3)
+    if choice2 in ("rock","paper","scissor"):
+        if computer==1:
+            print("You have chosen "+ choice2 + " and the computer has chosen rock ")
+            if choice2=="rock":
+                print("draw")
+                draws += 1
+            elif choice2=="paper":
+                print("win")
+                human += 1
+            elif choice2=="scissor":
+                print("lose")
+                computers += 1
+            else:
+                    sys.exit()
+        elif computer==2:
+            print("You have chosen " + choice2 + " and the computer has chosen paper ")
+            if choice2=="rock":
+                print("lose")
+                computers += 1
+            elif choice2=="paper":
+                print("draw")
+                draws += 1
+            elif choice2=="scissor":
+                print("win")
+                human += 1
+            else:
+                sys.exit()
+				
+        elif computer==3:
+            print("You have chosen " + choice2 + " and the computer has chosen scissor ")
+            if choice2=="rock":
+                print("win")
+                human += 1
+            elif choice2=="paper":
+                print("lose")
+                computers += 1
+            elif choice2=="scissor":
+                print("draw")
+                draws += 1
+            else:
+                sys.exit()
+        choice3=input("would you like to play again ")
+        if choice3=="no":
+            print ("Human score: " , human)
+            print ("Computer score: " , computers)
+            print ("Draws: " , draws)
+            sys.exit()
+    else:
+        sys.exit()
+else:
+    print("GoodBye")
+    sys.exit()
